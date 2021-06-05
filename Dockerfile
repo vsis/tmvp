@@ -2,7 +2,7 @@ FROM python:3.9.5-alpine3.13
 MAINTAINER Roddy <roddy.gonzalez.89@gmail.com>
 
 # OS libs
-RUN apk add zlib-dev jpeg-dev gcc alpine-sdk
+RUN apk add zlib-dev jpeg-dev gcc alpine-sdk tesseract-ocr tesseract-ocr-data-spa
 RUN mkdir -p /src/app/
 WORKDIR /src/app/
 

@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from werkzeug.utils import secure_filename
+from img import proc_image
 
 app = Flask(__name__)
 
@@ -27,9 +28,11 @@ def img():
     try:
         file = request.files['file']
         filename = secure_filename(file.filename)
+        filename = UPLOAD_FOLDER + filename
         if allowed(filename):
-            file.save(UPLOAD_FOLDER + filename)
-            returned_data = {'message': 'File OK'}
+            file.save(filename)
+            str_data = proc_image(filename)
+            returned_data = {'message': 'File OK', 'data': str_data}
         else:
             returned_data = {'message': 'File not allowed. Use one of these extensions: ' + str(ALLOWED_EXTENSIONS)}
             status = 400
