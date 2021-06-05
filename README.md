@@ -1,6 +1,6 @@
 # TMVP
 
-This is a minimun viable product for a Tesseract-based microservice, that recieves an image and return its text.
+This is a minimum viable product for a Tesseract-based microservice, that recieves an image and return its text.
 
 ## Build
 
