@@ -19,5 +19,5 @@ docker run --rm -p 80:80 vsis/tmvp
 There are some examples in `example` dir you may use.
 
 ```
-curl -v -F file=@examples/receipt.png localhost:5000/img
+curl -v -F file=@examples/receipt.png localhost/img
 ```

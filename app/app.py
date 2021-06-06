@@ -29,10 +29,11 @@ def img():
         file = request.files['file']
         filename = secure_filename(file.filename)
         filename = UPLOAD_FOLDER + filename
+        lang = request.args.get('lang') or 'spa'
         if allowed(filename):
             file.save(filename)
-            str_data = proc_image(filename)
-            returned_data = {'message': 'File OK', 'data': str_data}
+            str_data = proc_image(filename, lang)
+            returned_data = {'message': 'File OK', 'data': str_data, 'lang': lang}
         else:
             returned_data = {'message': 'File not allowed. Use one of these extensions: ' + str(ALLOWED_EXTENSIONS)}
             status = 400
