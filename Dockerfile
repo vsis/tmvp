@@ -12,5 +12,5 @@ RUN pip install -r requirements.txt
 
 # app
 ADD app/ ./
-EXPOSE 5000
+EXPOSE 80
 CMD gunicorn -w 4 -b 0.0.0.0:80 app:app
