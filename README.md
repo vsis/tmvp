@@ -11,7 +11,7 @@ docker build -t vsis/tmvp .
 ## Run
 
 ```
-docker run --rm -p 5000:5000 tmvp
+docker run --rm -p 5000:5000 vsis/tmvp
 ```
 
 ## Use

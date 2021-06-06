@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 # app
 ADD app/ ./
 EXPOSE 5000
-CMD flask run --host 0.0.0.0
+CMD gunicorn -w 4 -b 0.0.0.0:80 app:app

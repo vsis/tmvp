@@ -9,7 +9,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 @app.route("/", methods=['GET'])
 def index():
-    return jsonify({message: 'hello world! This is my Tesseract MVP'})
+    return jsonify({'message': 'hello world! This is my Tesseract MVP'})
 
 
 @app.route("/img", methods=['POST'])
